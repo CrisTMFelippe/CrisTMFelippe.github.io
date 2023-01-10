@@ -1,0 +1,113 @@
+.experiencia {
+  max-width: 1200px;
+  padding: 40px 20px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 100px; /*Espaçamento entre os elementos, adicionando dois valores, ele faz a separação na vertical/horizontal*/
+}
+
+.experiencia .subtitulo {
+  color: #e0e0e0;
+}
+
+.experiencia-texto {
+  font-size: 1.5rem;
+  line-height: 1.33; /*altura da linha*/
+  max-width: 40ch; /*máximo de caractéres por linha*/
+  margin-bottom: 60px; /*margem entre colunas*/
+  color: #525252;
+}
+
+.experiencia-texto strong {
+color: #141414;
+}
+
+.empresa {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /*comandos acima, usados para separar os itens em duas colunas. Um é complemento do outro.*/
+  gap: 10px 20px; /*Espaçamento entre os elementos, adicionando dois valores, ele faz a separação na vertical/horizontal*/
+  padding: 20px;
+  background: #f5f5f5;
+  margin-bottom: 20px; /*Margem entre os itens*/
+  border-radius: 4px;
+  position: relative;
+}
+
+.empresa::before {
+  content: "";
+  display: block;
+  width: 4px; /*largura do elemento*/
+  height: 20px; /*altura do elemento*/
+  background: linear-gradient(#b6f829, #67dd0a);
+  position: absolute;
+  top: 20px;
+  left: -4px; /*posiciona o elemento*/
+}
+
+.empresa-ano {
+  position: absolute;
+  top: 22px; /*distancia o elemento do topo*/
+  left: -100px; /*posiciona o elemento*/
+  text-align: right; /*alinhamento do texto(conteúdo) à direita*/
+  width: 80px; /*tamanho total do elemento, e o conteúdo fica alinhado à direita como definido acima*/
+  color: #525252;
+  font-size: .875rem;
+}
+
+.empresa-titulo {
+  font-size: 1.125rem;
+  line-height: 1.1; /*altura da linha*/
+  font-weight: bold;
+}
+
+.empresa-texto {
+  font-size: .875rem;
+  line-height: 1.4; /*altura da linha*/
+  color: #525252;
+}
+
+.empresa-habilidades {
+  display: flex; /*alinha os elementos à direita*/
+  flex-wrap: wrap; /*caso os elementos não caibam um ao lado o outro, ele quebra*/
+  gap: 10px; /*Espaçamento entre os elementos, adicionando dois valores, ele faz a separação na vertical/horizontal*/
+  align-content: start; /*alinha os elementos ao início*/
+}
+
+.empresa-habilidades li {
+  font-size: .875rem;
+  line-height: 1.4; /*altura da linha*/
+  border-radius: 4px; /*arredondamento das bordas*/
+  padding: 5px 10px; /*altura ao redor do elemento*/
+  background: #fff;
+}
+
+@media (max-width: 800px) {
+  .experiencia {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .experiencia .subtitulo {
+    color: #141414;
+  }
+  .experiencia-texto {
+    font-size: 1.25rem;
+  }
+  .empresa-ano {
+    position: initial; /*trás de volta o elemento para o início do grid*/
+    order: 1; /*value 1 - posiciona o elemento como o ultimo do grid*/
+    width: initial;
+    text-align: left; /*alinha o texto à esquerda*/
+  }
+  .empresa-ano::before {
+    content: "Ano: ";
+  }
+}
+
+@media (max-width: 400px) {
+  .empresa {
+    grid-template-columns: 1fr;
+  }
+}
+
